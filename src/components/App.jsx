@@ -68,7 +68,7 @@ class App extends React.Component {
 
     searchContact = (event) => {
         const { target } = event;
-        this.setState({ filter: target.value });
+        this.setState({ filter: target.value.toLowerCase() });
     };
 
     getAllContacts = () => {
