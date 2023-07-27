@@ -59,13 +59,34 @@ export const Wrapper = styled.div`
     }
 
     .contacts{
-        margin-top: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 200px;
+
+        .empty{
+            color: gray;
+        }
         
         ul{
-            list-style-type: none;
             margin-top: 20px;
             height: 200px;
+            width: 100%;
+            padding: 5px;
+
+            list-style-type: none;
             overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #888;
+                border-radius: 5px;
+            }
 
             li{
                 display: flex;

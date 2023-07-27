@@ -18,18 +18,20 @@ export class Contacts extends React.Component {
     render() {
         return (
             <section className='contacts'>
-                <ul>
-                    {this.getContacts().map(({ id, name, number }) => (
-                        <li key={id}>
-                            <p>{name}: {number}</p>
-                            <button
-                                type='button'
-                                name={id}
-                                onClick={() => this.deleteContact(id)}
-                            >Delete</button>
-                        </li>
-                    ))}
-                </ul>
+                {this.getContacts().length === 0 ? <p className="empty">Contact's not found</p> :
+                    <ul>
+                        {this.getContacts().map(({ id, name, number }) => (
+                            <li key={id}>
+                                <p>{name}: {number}</p>
+                                <button
+                                    type='button'
+                                    name={id}
+                                    onClick={() => this.deleteContact(id)}
+                                >Delete</button>
+                            </li>
+                        ))}
+                    </ul>
+                }
             </section>
         )
     }
